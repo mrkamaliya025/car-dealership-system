@@ -11,14 +11,11 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Car Dealership Inventory System")
 
-# ✅ CORS FIXED
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# CORS
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -28,7 +25,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ ROUTERS
 app.include_router(auth_router)
 app.include_router(vehicle_router)
 
