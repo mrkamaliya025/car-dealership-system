@@ -7,15 +7,23 @@ import app.models
 from app.routers.auth import router as auth_router
 from app.routers.vehicles import router as vehicle_router
 
+# Create database tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Car Dealership Inventory System")
 
-# CORS
+# -------------------------
+# CORS Configuration
+# -------------------------
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+
+    # Production Vercel URL
     "https://car-dealership-system-sooty.vercel.app",
+
+    # Current Preview Deployment
+    "https://car-dealership-system-amkqjwg1m-mrkamaliya025s-projects.vercel.app",
 ]
 
 app.add_middleware(
@@ -26,9 +34,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# -------------------------
+# Routers
+# -------------------------
 app.include_router(auth_router)
 app.include_router(vehicle_router)
 
+# -------------------------
+# Home Route
+# -------------------------
 @app.get("/")
 def home():
-    return {"message": "API Running 🚀"}
+    return {
+        "message": "API Running 🚀"
+    }
