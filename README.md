@@ -126,7 +126,7 @@ python make_admin.py
 
 ## Live Demo
 Frontend:
-https://<your-vercel-url>
+https://car-dealership-system-sooty.vercel.app/
 
 Backend API:
 https://car-dealership-system-1.onrender.com
