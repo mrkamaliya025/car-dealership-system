@@ -122,6 +122,18 @@ python make_admin.py
 - POST `/api/vehicles/{id}/purchase`
 - POST `/api/vehicles/{id}/restock`
 
+# Car Dealership Inventory System
+
+## Live Demo
+Frontend:
+https://<your-vercel-url>
+
+Backend API:
+https://car-dealership-system-1.onrender.com
+
+Swagger Docs:
+https://car-dealership-system-1.onrender.com/docs
+
 ## Author
 
 **Karan Kamaliya**
