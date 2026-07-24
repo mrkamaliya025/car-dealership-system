@@ -15,6 +15,7 @@ app = FastAPI(title="Car Dealership Inventory System")
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://car-dealership-system-sooty.vercel.app",
 ]
 
 app.add_middleware(
